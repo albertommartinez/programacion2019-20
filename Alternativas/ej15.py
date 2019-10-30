@@ -18,16 +18,16 @@
 
 print("---[Calculo viaje escolar en autobus]---")
 alumnos = int(input("Introduce el número de alumnos> ")) 
-if(alumnos>=100):
+if(alumnos>=100): #Si la cantidad de alumnos es mayor o igual a 100
     costeAlumno = 65
     gananciaEmpresa = 65*alumnos
-elif((alumnos>50)and(alumnos<99)):
+elif((alumnos>50)and(alumnos<99)): #Si la cantidad de alumnos es mayor que 50 y manor que 99
     costeAlumno = 70
     gananciaEmpresa = 70*alumnos
-elif((alumnos>30)and(alumnos<49)):
+elif((alumnos>30)and(alumnos<49)): #Si la cantidad de alumnos es mayor a 30 y menor a 49
     costeAlumno = 95
     gananciaEmpresa = 95*alumnos
-else:
+else: #Si son menos de 30 alumnos
     costeAlumno = 4000/alumnos
     gananciaEmpresa = 4000
 
