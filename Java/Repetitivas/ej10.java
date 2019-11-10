@@ -1,0 +1,39 @@
+import java.util.Scanner; //Importar la clase Scanner
+
+/**
+ * Pide una cadena y un carácter por teclado y muestra cuantas veces aparece el carácter en la cadena.
+ * 
+ * @author Alberto Miguel Martinez Jimenez
+ */
+/**
+ * Algoritmo
+ * Almacena una cadena
+ * Almacena un carácter
+ * Recorrer la cadena 
+ * Incrementar contador conincidencias cada vez que coincida con carácter
+ */
+
+
+public class ej10 {
+
+	public static void main(String[] args) {
+		String cadena;
+		char caracter;
+		int coincidencias = 0;
+		Scanner scanner = new Scanner(System.in);//Intanciar el objeto Scanner
+		
+		System.out.println("---Buscar carácter en una cadena---");
+		System.out.println("Introduce una cadena> ");
+		cadena = scanner.nextLine();
+		System.out.println("Introduce un carácter a buscar en la cadena anterior> ");
+		caracter = scanner.next().charAt(0);
+		for(int i=0;i<cadena.length();i++) {
+			if(cadena.charAt(i)==caracter) {
+				coincidencias++;
+			}
+		}
+		
+		System.out.println("Existen "+coincidencias+"coincidencias");
+	}
+
+}
