@@ -16,7 +16,7 @@
 from random import randint
 
 print("...-->ADIVINA EL NÚMERO<--...")
-numeroAleatorio = randint(1, 100)
+numeroAleatorio = randint(0, 100)
 numero = 0
 intentos = 0
 while((numeroAleatorio!=numero)and(intentos<10)):
