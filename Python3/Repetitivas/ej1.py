@@ -23,8 +23,8 @@ while((numeroAleatorio!=numero)and(intentos<10)):
     numero = int(input("En que número del 1 al 100 estoy pensando> "))
     if(numero<numeroAleatorio):
         print("El número misterioso es mayor")
-	elif(numero>numeroAleatorio):
-	    print("El número misterioso es menor")
+    elif(numero>numeroAleatorio):
+	print("El número misterioso es menor")
 	intentos = intentos + 1
 if(intentos==10):
     print("  GAME OVER  ")
