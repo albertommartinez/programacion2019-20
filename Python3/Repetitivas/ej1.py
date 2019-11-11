@@ -20,14 +20,14 @@ numeroAleatorio = randint(0, 100)
 numero = 0
 intentos = 0
 while((numeroAleatorio!=numero)and(intentos<10)):
-	numero = int(input("En que número del 1 al 100 estoy pensando> "))
-	if(numero<numeroAleatorio):
-		print("El número misterioso es mayor")
+    numero = int(input("En que número del 1 al 100 estoy pensando> "))
+    if(numero<numeroAleatorio):
+        print("El número misterioso es mayor")
 	elif(numero>numeroAleatorio):
-		print("El número misterioso es menor")
+	    print("El número misterioso es menor")
 	intentos = intentos + 1
 if(intentos==10):
-		print("  GAME OVER  ")
+    print("  GAME OVER  ")
 if(intentos!=10):
     print(f"Has acertado en {intentos} intentos, el número es {numeroAleatorio}")
 
