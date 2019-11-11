@@ -28,6 +28,6 @@ while((numeroAleatorio!=numero)and(intentos<10)):
 	intentos = intentos + 1
 if(intentos==10):
     print("  GAME OVER  ")
-if(intentos!=10):
+else:
     print(f"Has acertado en {intentos} intentos, el número es {numeroAleatorio}")
 
