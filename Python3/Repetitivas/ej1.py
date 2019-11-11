@@ -26,7 +26,7 @@ while((numeroAleatorio!=numero)and(intentos<10)):
 	elif(numero>numeroAleatorio):
 		print("El número misterioso es menor")
 	intentos = intentos + 1
-	if(intentos==10):
+if(intentos==10):
 		print("  GAME OVER  ")
 if(intentos!=10):
     print(f"Has acertado en {intentos} intentos, el número es {numeroAleatorio}")
