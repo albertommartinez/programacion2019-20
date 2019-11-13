@@ -2,12 +2,12 @@ import java.util.Scanner; //Importar la clase Scanner
 
 /**
  * Escribe un programa que pida el limite inferior y superior de un intervalo. 
- * Si el límite inferior es mayor que el superior lo tiene que volver a pedir. 
- * A continuación se van introduciendo números hasta que introduzcamos el 0. 
- * Cuando termine el programa dará las siguientes informaciones:
- * 		La suma de los números que están dentro del intervalo (intervalo abierto).
- * 		Cuantos números están fuera del intervalo.
- * 		Informa si hemos introducido algún número igual a los límites del intervalo.
+ * Si el lÃ­mite inferior es mayor que el superior lo tiene que volver a pedir.Â 
+ * A continuaciÃ³n se van introduciendo nÃºmeros hasta que introduzcamos el 0. 
+ * Cuando termine el programa darÃ¡ las siguientes informaciones:
+ * 		La suma de los nÃºmeros que estÃ¡n dentro del intervalo (intervalo abierto).
+ * 		Cuantos nÃºmeros estÃ¡n fuera del intervalo.
+ * 		Informa si hemos introducido algÃºn nÃºmero igual a los lÃ­mites del intervalo.
  * 
  * @author Alberto Miguel Martinez Jimenez
  *
@@ -35,13 +35,13 @@ public class ej5 {
 			limiteInferior = scanner.nextInt();
 			System.out.println("Limite Superior> ");
 			limiteSuperior = scanner.nextInt();
-			if(limiteInferior<limiteSuperior) {
-				validado = true;
+			if(limiteInferior>limiteSuperior) {
+				validado = false;
 			}
 		}while(!validado);
 		
 		do {
-			System.out.println("Introduce un número> ");
+			System.out.println("Introduce un nÃºmero> ");
 			numero = scanner.nextInt();
 			if((numero>limiteInferior)&&(numero<limiteSuperior)) {
 				sumaDentroRango = sumaDentroRango + numero;
@@ -51,12 +51,12 @@ public class ej5 {
 				limiteIntervalo = true;
 			}
 		}while(numero!=0);
-		System.out.println("La suma de los números dentro del intervalo es "+sumaDentroRango);
-		System.out.println("Hay "+fueraRango+" número fuera del rango");
+		System.out.println("La suma de los nÃºmeros dentro del intervalo es "+sumaDentroRango);
+		System.out.println("Hay "+fueraRango+" nÃºmero fuera del rango");
 		if(limiteIntervalo) {
-			System.out.println("Hay números que coinciden con los límites");
+			System.out.println("Hay nÃºmeros que coinciden con los lÃ­mites");
 		}else{
-			System.out.println("No hay números que coinciden con los límites");
+			System.out.println("No hay nÃºmeros que coinciden con los lÃ­mites");
 		}
 	}
 
