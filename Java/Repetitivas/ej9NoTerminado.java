@@ -1,13 +1,13 @@
 import java.util.Scanner; //Importar la clase Scanner
 
 /**
- * Mostrar en pantalla los N primero número primos.
- *  Se pide por teclado la cantidad de números primos que queremos mostrar.
+ * Mostrar en pantalla los N primero nÃºmero primos.
+ *  Se pide por teclado la cantidad de nÃºmeros primos que queremos mostrar.
  *  @author Alberto Miguel Martinez Jimenez
  */
 /**
  * Algoritmo
- * Almacenar cantidad números primos
+ * Almacenar cantidad nÃºmeros primos
  * repetir 1 hasta cantidad-1 (-1 porque empezamos en 1)
  * 		primo = false
  * 		repetir divisor=3 hasta divisor=numero
@@ -29,13 +29,13 @@ public class ej9NoTerminado {
 		boolean primo;
 		Scanner scanner = new Scanner(System.in);//Intanciar el objeto Scanner
 		
-		System.out.println("Introduce la cantidad de números primos que deseas> ");
+		System.out.println("Introduce la cantidad de nÃºmeros primos que deseas> ");
 		cantidadPrimos = scanner.nextInt();
 		
 		for(int i=0;i<cantidadPrimos-1;i++) {
 			primo = true;
 			for(int j=3;j<=numero;j++) {
-				if(j%numero==0) {
+				if(j%Math.sqrt(numero)==0) {
 					primo = false;
 				}else{
 					System.out.println(numero);
