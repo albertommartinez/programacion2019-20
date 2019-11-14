@@ -38,10 +38,13 @@ public class ej9NoTerminado {
 				if(numero%j==0) {
 					primo = false;
 				}else{
-					System.out.println(numero);
+					primo = true;
 				}
 			}
 			
+			if(primo==true) {
+				System.out.println(numero);
+			}
 		}
 
 	}
