@@ -34,8 +34,8 @@ public class ej9NoTerminado {
 		
 		for(int i=0;i<cantidadPrimos-1;i++) {
 			primo = true;
-			for(int j=3;j<=numero;j++) {
-				if(j%Math.sqrt(numero)==0) {
+			for(int j=3;j<=Math.sqrt(numero);j++) {
+				if(j%numero==0) {
 					primo = false;
 				}else{
 					System.out.println(numero);
