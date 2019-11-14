@@ -26,7 +26,7 @@ public class ej9NoTerminado {
 		int cantidadPrimos;
 		int contadorPrimos;
 		int numero = 3;
-		boolean primo;
+		boolean primo = true;
 		Scanner scanner = new Scanner(System.in);//Intanciar el objeto Scanner
 		
 		System.out.println("Introduce la cantidad de números primos que deseas> ");
