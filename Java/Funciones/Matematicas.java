@@ -1,5 +1,10 @@
 package matematicas;
 
+/**
+ * funciones Matemáticas útiles 
+ * @author Alberto Miguel Martínez Jiménez
+ *
+ */
 public class Matematicas {
 	
 
@@ -102,7 +107,7 @@ public class Matematicas {
  * @return int
  */
 	public static int digitoN(int numero,int n) {
-		return trozoDeNumero(numero,n,n+1);	
+		return trozoDeNumero(numero,n,n);	
 	}
 /**
  * devuelve la posición de la primera ocurrencia de un dígito
@@ -145,7 +150,7 @@ public class Matematicas {
 		int divisor = 10;
 		
 		if(posicionCorte>0) {
-			for(int i=0;i<posicionCorte;i++) {//se multiplica por 10 tantas veces como cifras se quieren quitar
+			for(int i=1;i<posicionCorte;i++) {//se multiplica por 10 tantas veces como cifras se quieren quitar
 				divisor = divisor*10;
 			}
 			return numero%divisor;
