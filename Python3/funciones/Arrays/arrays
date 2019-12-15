@@ -1,0 +1,71 @@
+# -*- coding: utf-8 -*-
+'''
+Compendio de funciones para trabajar con arrays(una dimensión)
+@author Alberto Miguel Martínez Jiménez
+'''
+from random import randint
+
+'''
+ crea un array y lo inicializa con valores enteros aleatorios
+ @param tamano tamaño del array - int
+ @param min minimo valor aleatorio - int
+ @param max int maximo valor aleatorio - int
+ @return array
+'''
+def generaLista(tamano,min,max):
+    i=0
+    lista = []
+    if tamano>0:
+        while True:
+            lista[i] = randint(min,max)
+        if i==(tamano-1):
+                break
+        i = i + 1
+    return lista
+
+'''
+devuelve el valor mínimo del array
+@param array int[]
+@return int
+'''
+def minimoArrayInt(array):
+    return min(array)
+    
+'''
+devuelve el valor máximo del array
+@param array int[]
+@return int
+'''
+def maximoArrayInt(array):
+    return max(array)
+
+'''
+devuelve la media de los valores del array
+de enteros pasado por parámetro    
+@param array int[]
+@return double
+'''
+def mediaArrayInt(array):
+    sumatorio = 0
+    i = 0
+    
+    while i<len(array):
+        sumatorio += array[i]
+        i = i + 1
+    return sumatorio/i    
+    
+'''
+devuelve true si encuentra el número pasado por
+parámetro en el array y false en caso contrario    
+@param array int[]
+@param nABuscar int
+@return boolean
+'''    
+def estaEnArray(array,nABuscar): 
+    i = 0
+    while i<len(array):
+        if(array[i==nABuscar]):
+            return True  
+    
+    
+    
