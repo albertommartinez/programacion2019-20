@@ -11,6 +11,7 @@
 		
 		for(int i=0;i<longitudN;i++) {
 			digito = n%10;
+			n = n/10;
 			for(int j=0;j<digito;j++) {
 				palotes = palotes + "|";
 			}
