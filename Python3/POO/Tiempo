@@ -1,0 +1,33 @@
+'''
+Clase Tiempo para facilitar el manejo de intervalos de tiempo
+
+@author: Alberto Miguel Martínez Jiménez
+'''
+
+class Tiempo:
+    #onstructor
+    def __init__(self,horas,minutos,segundos):
+        self.horas = horas
+        self.minutos = minutos
+        self.segundos = segundos
+    '''
+     formatea el intervalo de tiempo para que los valores 
+     no sean superiores a 59
+    '''   
+    def formatearIntervalo(self,horas,minutos,segundos):
+        if(segundos>59):
+            segundos = segundos%60
+            minutos += segundos/60
+        if(minutos>59):
+            minutos = minutos%60
+            horas += minutos/60 
+            
+        return [horas,minutos,segundos]
+    '''
+    incrementa el intervalo y ajusta los valores
+    '''
+    def sumarAIntervalo(self,tiempo):
+        self.horas += tiempo.horas
+        self.minutos += tiempo.minutos
+        self.segundos += tiempo.segundos
+        return self.formatearIntervalo(self.horas,self.minutos,self.segundos)    
