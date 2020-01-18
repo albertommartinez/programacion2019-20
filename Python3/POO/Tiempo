@@ -1,33 +1,56 @@
 '''
 Clase Tiempo para facilitar el manejo de intervalos de tiempo
-
+-Sumar y restar objetos clase tiempo
+-Sumar y restar segundos, minutos y/o horas
+-Devolver cadena con el tiempo almacenado
 @author: Alberto Miguel Martínez Jiménez
 '''
-
 class Tiempo:
-    #onstructor
+    #Constructor
     def __init__(self,horas,minutos,segundos):
-        self.horas = horas
-        self.minutos = minutos
-        self.segundos = segundos
+        self.__horas = horas
+        self.__minutos = minutos
+        self.__segundos = segundos
+        self.__segundosTotales = 0
     '''
-     formatea el intervalo de tiempo para que los valores 
-     no sean superiores a 59
-    '''   
-    def formatearIntervalo(self,horas,minutos,segundos):
-        if(segundos>59):
-            segundos = segundos%60
-            minutos += segundos/60
-        if(minutos>59):
-            minutos = minutos%60
-            horas += minutos/60 
-            
-        return [horas,minutos,segundos]
+    Transforma horas, minutos y segundos a segundos
+    @param horas int
+    @param minutos int
+    @param segundos int
+    @return int
     '''
-    incrementa el intervalo y ajusta los valores
+    @staticmethod
+    def tiempo_a_segundos(horas,minutos,segundos):
+        return (horas*3600)+(minutos*60)+segundos
     '''
-    def sumarAIntervalo(self,tiempo):
-        self.horas += tiempo.horas
-        self.minutos += tiempo.minutos
-        self.segundos += tiempo.segundos
-        return self.formatearIntervalo(self.horas,self.minutos,self.segundos)    
+    Transforma segundos a horas,minutos y segundos
+    @param segundos int
+    @return int[]
+    '''
+    @staticmethod
+    def segundos_a_tiempo(segundos):
+        intervalo = []
+        horas = segundos // 3600
+        segundos = segundos % 3600
+        minutos = segundos // 60
+        segundos = segundos % 60
+        
+        return intervalo[horas,minutos,segundos]
+    '''
+    Suma un objeto de tiempo al objeto almacenado
+    @param tiempo tiempo
+    @return tiempo 
+    '''
+    def sumar_tiempo(self,tiempo):
+        self.__segundosTotales = self.tiempo_a_segundos(self.horas, self.minutos, self.segundos)
+        tiempo.__segundosTotales = tiempo.tiempo_a_segundos(tiempo.horas, tiempo.minutos, tiempo.segundos)
+        intervalo = self.segundos_a_tiempo(self.__segundosTotales+tiempo.__segundosTotales)    
+        self.__horas = intervalo[0]
+        self.__minutos = intervalo[1]
+        self.__segundos = intervalo[2]
+        
+if __name__ == "__main__":
+    tiempo1 = Tiempo(3,25,30)
+    tiempo2 = Tiempo(1,10,20)
+    
+    print("suma: "+tiempo1.sumar_tiempo(tiempo2))
