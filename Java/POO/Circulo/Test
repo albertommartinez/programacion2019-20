@@ -1,0 +1,24 @@
+package circulo;
+import java.util.Scanner;
+
+class TestCirculo {
+
+	public static void main(String[] args) {
+		
+		String respuesta;
+		double area;
+		Scanner teclado = new Scanner(System.in);//instancia el objeto Scanner
+		Circulo circulito = new Circulo(5);//crea objeto tipo Circulo con radio 5
+		
+		System.out.println(circulito.toString());
+		for(int i=0;i<27;i++) {
+			circulito.aumentarRadio(1);
+		}
+		area = circulito.getArea();
+		for(int i=0;i<10;i++) {
+			circulito.disminuyeRadio(1);
+		}
+		System.out.print(circulito.toString());
+	}
+
+}
