@@ -1,4 +1,4 @@
-package ejercicios;
+package ejercicio2;
 
 import java.util.ArrayList;
 
@@ -9,12 +9,16 @@ import java.util.ArrayList;
  * y 20 elementos ambos inclusive.
  * @author Alberto Miguel Martínez Jiménez
  */
-public class ej2 {
+public class Ej2 {
 	private int suma;
 	private double media;
 	private int maximo;
 	private int minimo;
 	ArrayList<Integer> aleatorios = new ArrayList<Integer>();
+	
+	Ej2() {
+		introducirValores(generarEnteroAleatorio(10,20),0,100);
+	}
 	
 
 /**
@@ -33,8 +37,11 @@ public class ej2 {
  * @param maximo int
  */
 	private void introducirValores(int nValores,int minimo, int maximo) {
+		int aleatorio = 0;
 		for(int i=0;i<nValores;i++) {
-			aleatorios.add(generarEnteroAleatorio(0,100));
+			aleatorio = generarEnteroAleatorio(minimo,maximo);//0-100
+			aleatorios.add(aleatorio);
+			System.out.println(aleatorios.get(i));
 		}
 	}
 /**
@@ -52,7 +59,37 @@ public class ej2 {
 	public double media() {
 		return suma()/aleatorios.size();
 	}
+/**
+ * Devuelve el valor máximo del arrayList 	
+ * @return
+ */
+	public int maximo() {
+		int maximo = Integer.MIN_VALUE;//inicializar maximo al mínimo valor de un int, para que el primero siempre sea el máximo 
+		int valor = aleatorios.get(0);//el primer valor extraido siempre sera el índice 0
+		for(int i=0;i<aleatorios.size()-1;i++) {
+			valor = aleatorios.get(i);
+			if(maximo<valor) {
+				maximo = valor;
+			}
+		}
+		return maximo;
+	}
 	
+/**
+ * Devuelve el valor mínimo del arrayList 	
+ * @return
+ */
+	public int minimo() {
+		int minimo = Integer.MAX_VALUE;//inicializar minimo al máximo valor de un int, para que el primero siempre sea el mínimo 
+		int valor = aleatorios.get(0);//el primer valor extraido siempre sera el índice 0
+		for(int i=0;i<aleatorios.size()-1;i++) {
+			valor = aleatorios.get(i);
+			if(minimo>valor) {
+				minimo = valor;
+			}
+		}
+		return minimo;
+	}
 	
 
 //Getters y Setters
