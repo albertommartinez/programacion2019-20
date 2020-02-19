@@ -46,24 +46,24 @@ public class Ej2 {
 	}
 /**
  * Calcula la suma de todos los elementos del ArrayList	
- * @return int
  */
-	public int suma() {
+	public void suma() {
 		int suma = 0;
 		for(int i=0;i<aleatorios.size();i++) {
 			suma = suma + aleatorios.get(i);
 		}
-		return suma;
+		this.setSuma(suma);
 	}
 	
-	public double media() {
-		return suma()/aleatorios.size();
+	public void media() {
+		double media = this.getSuma()/aleatorios.size();
+		this.setMedia(media); 
 	}
 /**
  * Devuelve el valor máximo del arrayList 	
  * @return
  */
-	public int maximo() {
+	public void maximo() {
 		int maximo = Integer.MIN_VALUE;//inicializar maximo al mínimo valor de un int, para que el primero siempre sea el máximo 
 		int valor = aleatorios.get(0);//el primer valor extraido siempre sera el índice 0
 		for(int i=0;i<aleatorios.size()-1;i++) {
@@ -72,7 +72,7 @@ public class Ej2 {
 				maximo = valor;
 			}
 		}
-		return maximo;
+		this.setMaximo(maximo);
 	}
 	
 /**
@@ -88,6 +88,7 @@ public class Ej2 {
 				minimo = valor;
 			}
 		}
+		
 		return minimo;
 	}
 	
@@ -119,3 +120,4 @@ public class Ej2 {
 	}
 
 }
+
