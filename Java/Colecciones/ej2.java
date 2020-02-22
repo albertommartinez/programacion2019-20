@@ -1,4 +1,4 @@
-package ejercicio2;
+package ejercicios;
 
 import java.util.ArrayList;
 
@@ -9,17 +9,13 @@ import java.util.ArrayList;
  * y 20 elementos ambos inclusive.
  * @author Alberto Miguel Martínez Jiménez
  */
-public class Ej2 {
+public class ej2 {
 	private int suma;
 	private double media;
 	private int maximo;
 	private int minimo;
 	ArrayList<Integer> aleatorios = new ArrayList<Integer>();
-	
-	Ej2() {
-		introducirValores(generarEnteroAleatorio(10,20),0,100);
-	}
-	
+
 
 /**
  * Genera entero aleatorio entre 0 y 100 ambos inclusive
@@ -37,76 +33,42 @@ public class Ej2 {
  * @param maximo int
  */
 	private void introducirValores(int nValores,int minimo, int maximo) {
-		int aleatorio = 0;
 		for(int i=0;i<nValores;i++) {
-			aleatorio = generarEnteroAleatorio(minimo,maximo);//0-100
-			aleatorios.add(aleatorio);
-			System.out.println(aleatorios.get(i));
+			aleatorios.add(generarEnteroAleatorio(0,100));
 		}
 	}
 /**
  * Calcula la suma de todos los elementos del ArrayList	
+ * @return int
  */
-	public void suma() {
+	public int suma() {
 		int suma = 0;
 		for(int i=0;i<aleatorios.size();i++) {
 			suma = suma + aleatorios.get(i);
 		}
-		this.setSuma(suma);
+		return suma;
 	}
 	
-	public void media() {
-		double media = this.getSuma()/aleatorios.size();
-		this.setMedia(media); 
-	}
-/**
- * Devuelve el valor máximo del arrayList 	
- * @return
- */
-	public void maximo() {
-		int maximo = Integer.MIN_VALUE;//inicializar maximo al mínimo valor de un int, para que el primero siempre sea el máximo 
-		int valor = aleatorios.get(0);//el primer valor extraido siempre sera el índice 0
-		for(int i=0;i<aleatorios.size()-1;i++) {
-			valor = aleatorios.get(i);
-			if(maximo<valor) {
-				maximo = valor;
-			}
-		}
-		this.setMaximo(maximo);
+	public double media() {
+		return suma()/aleatorios.size();
 	}
 	
-/**
- * Devuelve el valor mínimo del arrayList 	
- * @return
- */
-	public int minimo() {
-		int minimo = Integer.MAX_VALUE;//inicializar minimo al máximo valor de un int, para que el primero siempre sea el mínimo 
-		int valor = aleatorios.get(0);//el primer valor extraido siempre sera el índice 0
-		for(int i=0;i<aleatorios.size()-1;i++) {
-			valor = aleatorios.get(i);
-			if(minimo>valor) {
-				minimo = valor;
-			}
-		}
-		
-		return minimo;
-	}
 	
 
 //Getters y Setters
-	public int getSuma() {
+	public static int getSuma() {
 		return suma;
 	}
-	public void setSuma(int suma) {
+	public static void setSuma(int suma) {
 		this.suma = suma;
 	}
-	public double getMedia() {
+	public static double getMedia() {
 		return media;
 	}
-	public void setMedia(double media) {
+	public static void setMedia(double media) {
 		this.media = media;
 	}
-	public int getMaximo() {
+	public static int getMaximo() {
 		return maximo;
 	}
 	public void setMaximo(int maximo) {
@@ -120,4 +82,3 @@ public class Ej2 {
 	}
 
 }
-
