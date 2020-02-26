@@ -1,7 +1,7 @@
 package gestisimal;
 import recursos.*;
 
-class Articulo {
+public class Articulo {
 	private static int codigo;
 	private String descripcion;
 	private double precioCompra;
