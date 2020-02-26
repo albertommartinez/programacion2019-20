@@ -6,7 +6,7 @@ public class Almacen {
 	ArrayList<Articulo> almacen = new ArrayList<Articulo>();
 
 /**
- * AÃ±ade articulo al almacen
+ * Añade articulo al almacen
  * @param descripcion String
  * @param precioCompra double
  * @param precioVenta  double
@@ -55,4 +55,36 @@ public class Almacen {
 		Articulo articulo = almacen.get(codigo);
 		System.out.println(articulo.toString());
 	}
+/**
+ * Devuelve el indice del almacen del articulo
+ * del cuál se le ha pasado la desscripción por parámetro
+ * si no lo encuentra devuelve -1	
+ * @param descripcionArticulo String
+ * @return int
+ */
+	private int buscarArticulo(String descripcionArticulo) {
+		for(int i=0;i<almacen.size()-1;i++) {
+			if(almacen.get(i).getDescripcion()==descripcionArticulo) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public void listarArticulos() {
+		if(almacen.size()>0) {
+			for(int i=0;i<almacen.size()-1;i++) {
+				System.out.print(i+"."+almacen.get(i));
+			}
+		}else{
+			System.out.println("No hay productos en el almacen");
+		}
+	}
+@Override
+public String toString() {
+	
+	return "Almacen [almacen=" + almacen + "]";
+}
+	
+	
 }
