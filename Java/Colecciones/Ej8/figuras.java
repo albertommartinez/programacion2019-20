@@ -1,0 +1,5 @@
+package ej8;
+
+enum figuras {
+	AS,DOS,TRES,CUATRO,CINCO,SEIS,SIETE,OCHO,NUEVE,SOTA,CABALLO,REY;
+}
