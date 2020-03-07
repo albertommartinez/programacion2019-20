@@ -32,12 +32,14 @@ class Test {
 					
 					almacen.listarArticulos();
 					opcion = Teclado.leerEntero("Introduce indice del articulo a borrar: ");
-					almacen.almacen.removeIf(codigo -> codigo==opcion);
+					
 				case 3:
 					
 					int incremento = Teclado.leerEntero("Introduce cantidad a incrementar: ");
 					
-					
+				case 5:
+					almacen.toString();
+					almacen.listarArticulos();
 			}
 		}while(opcion!=0);
 	}
