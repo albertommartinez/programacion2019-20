@@ -80,7 +80,7 @@ public class Almacen {
 		return -1;
 	}
 	
-	public void listarArticulos() {
+	public void listarArticulos(ArrayList<Articulo> almacen) {
 		if(almacen.size()>0) {
 			for(int i=0;i<almacen.size()-1;i++) {
 				System.out.print(i+"."+almacen.get(i));
