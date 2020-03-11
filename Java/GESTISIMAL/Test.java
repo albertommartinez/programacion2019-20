@@ -30,7 +30,7 @@ class Test {
 					break;
 				case 2:
 					
-					almacen.listarArticulos();
+					almacen.listarArticulos(almacen);
 					opcion = Teclado.leerEntero("Introduce indice del articulo a borrar: ");
 					
 				case 3:
@@ -38,8 +38,8 @@ class Test {
 					int incremento = Teclado.leerEntero("Introduce cantidad a incrementar: ");
 					
 				case 5:
-					almacen.toString();
-					almacen.listarArticulos();
+					//almacen.toString();
+					almacen.listarArticulos(almacen);   
 			}
 		}while(opcion!=0);
 	}
