@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+
+def abrirArchivoLectura(archivo):
+    texto = open(archivo,'r')
+	return texto
+	
+def abrirArchivoEscritura(archivo):
+    texto = open(archivo,'w')
+	return texto
+
+def guardarArchivo(texto,archivo):
+    archivo.write(texto) 
+  
+	
+def encriptar_texto(archivo,archivoEncriptado,clave):
+	i=0
+    textoArchivo = abrirArchivoLectura(archivo)
+    textoEncArchivo = abrirArchivoEscritura(archivoEncriptado)
+	for caracter in textoArchivo:
+        textoEncArchivo[i] = ord(caracter) + clave
+		i=i+1
+	return textoEncArchivo
+	
+def salir():
+    archivo.close()   
+	
+if __name__ == "__main__":
+    print(abrirArchivoLectura("textoLimpio.txt"))
