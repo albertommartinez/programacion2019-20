@@ -9,9 +9,8 @@ public class Articulo {
 	private int stock;
 	
 	Articulo(String descripcion,double precioCompra,double precioVenta,int stock) {
-		int codigo = this.getCodigo();
-		this.setCodigo(codigo++);
-		this.setDescripcion(descripcion);
+		int auxCodigo = this.getCodigo();
+		this.setCodigo(auxCodigo++);
 		this.setPrecioCompra(precioCompra);
 		this.setPrecioVenta(precioVenta);
 		this.setStock(stock);
@@ -41,24 +40,22 @@ public class Articulo {
 		return precioVenta;
 	}
 	public void setPrecioVenta(double precioVenta) {
-		if(precioCompra<precioVenta) {
+		if(this.precioCompra<this.precioVenta)
 			this.precioVenta = precioVenta;
-		}
 	}
 	public int getStock() {
 		return stock;
 	}
 	public void setStock(int stock) {
-		if(stock>0) {
+		if(this.stock>0)
 			this.stock = stock;
-		}
 	}
 
 
 	@Override
 	public String toString() {
-		return "Articulo [descripcion=" + this.getDescripcion() + ", precioCompra=" + this.getPrecioCompra() + ", precioVenta="
-				+ this.getPrecioVenta() + ", stock=" + this.getStock() + "]";
+		return "\n Descripcion: " + getDescripcion() + "\n PrecioCompra: " + getPrecioCompra() + "\n precioVenta: "
+				+ getPrecioVenta() + "\n Stock=" + getStock() + "\n";
 	}
 	
 	

@@ -6,7 +6,7 @@ public class Almacen {
 	ArrayList<Articulo> almacen = new ArrayList<Articulo>();
 
 /**
- * Añade articulo al almacen
+ * AÃ±ade articulo al almacen
  * @param descripcion String
  * @param precioCompra double
  * @param precioVenta  double
@@ -17,13 +17,10 @@ public class Almacen {
 		
 		if(!almacen.contains(articulo)) {
 			almacen.add(articulo);
-			System.out.println("añadido");
 			return true;
 		}else{
-			System.out.println("no añadido");
 			return false;
-		}
-		
+		}	
 	}
 /**
  * Borrar articulo del almacen	
@@ -69,7 +66,7 @@ public class Almacen {
 	}
 /**
  * Devuelve el indice del almacen del articulo
- * del cuál se le ha pasado la desscripción por parámetro
+ * del cuÃ¡l se le ha pasado la desscripciÃ³n por parÃ¡metro
  * si no lo encuentra devuelve -1	
  * @param descripcionArticulo String
  * @return int
@@ -83,11 +80,12 @@ public class Almacen {
 		return -1;
 	}
 	
-	public void listarArticulos(Almacen almacen) {
-		if(almacen.size()>0) {
-			for(int i=0;i<almacen.almacen.size()-1;i++) {
-				System.out.print(i+"."+almacen.almacen.get(i));
-			}
+	public void listarArticulos() {		
+		int tamannoAlmacen = almacen.size();
+		int i = 0;
+		if(tamannoAlmacen>0) {
+			almacen.forEach((Articulo articulo) -> System.out.print(i+"."+almacen.get(i).toString()));
+				System.out.print(i+"."+almacen.get(i).toString());
 		}else{
 			System.out.println("No hay productos en el almacen");
 		}
