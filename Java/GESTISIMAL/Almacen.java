@@ -15,7 +15,8 @@ public class Almacen {
 	public boolean annadirArticulo(String descripcion,double precioCompra,double precioVenta,int stock) {
 		Articulo articulo = new Articulo(descripcion,precioCompra,precioVenta,stock);
 		
-		if(!almacen.contains(articulo)) {
+		  if(buscarArticulo(descripcion)==-1) {
+		//if(!almacen.contains(articulo)) {
 			almacen.add(articulo);
 			return true;
 		}else{
@@ -29,9 +30,18 @@ public class Almacen {
  */
 	public boolean borrarArticulo(int codigo) {
 		//almacen.removeIf(almacen -> almacen.getCodigo() == codigo);
-		if((codigo<almacen.size()-1)&&(codigo>-1)) {
+		/*if((codigo<(almacen.size()-1))&&(codigo>-1)) {
 			almacen.remove(codigo);
 			return true;
+		}
+		return false;*/
+		int cod;
+		for(Articulo art:almacen) {
+			cod = art.getCodigo();
+			if(cod == codigo) {
+				almacen.remove(cod);
+				return true;
+			}
 		}
 		return false;
 	}
@@ -52,8 +62,8 @@ public class Almacen {
  * @param decremento int
  * @return boolean
  */	
-	public boolean decrementarProductor(int codigo,int decremento) {
-		this.incrementarProducto(codigo, decremento*(-1));
+	public boolean decrementarProducto(int codigo,int decremento) {
+		this.incrementarProducto(codigo, decremento * (-1));
 		return true;
 	}
 /**
@@ -80,15 +90,23 @@ public class Almacen {
 		return -1;
 	}
 	
-	public void listarArticulos() {		
+	public int listarArticulos() {		
+		//System.out.println("LLega");
 		int tamannoAlmacen = almacen.size();
-		int i = 0;
+		//int i = 0;
 		if(tamannoAlmacen>0) {
-			almacen.forEach((Articulo articulo) -> System.out.print(i+"."+almacen.get(i).toString()));
-				System.out.print(i+"."+almacen.get(i).toString());
+			//almacen.forEach((Articulo articulo) -> System.out.print(i+"."+articulo.getDescripcion()));
+			
+			
+			for(int i=0;i<tamannoAlmacen;i++) {	
+				this.mostrarArticulo(i);
+				
+			}
+			return 0;
 		}else{
-			System.out.println("No hay productos en el almacen");
+			return -1;
 		}
+		
 	}
 	
 @Override
