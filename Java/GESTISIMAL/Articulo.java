@@ -10,10 +10,11 @@ public class Articulo {
 	
 	Articulo(String descripcion,double precioCompra,double precioVenta,int stock) {
 		int auxCodigo = this.getCodigo();
-		this.setCodigo(auxCodigo++);
-		this.setPrecioCompra(precioCompra);
-		this.setPrecioVenta(precioVenta);
-		this.setStock(stock);
+		this.descripcion = descripcion;
+		this.codigo = auxCodigo++;
+		this.precioCompra = precioCompra;
+		this.precioVenta = precioVenta;
+		this.stock = stock;
 	}
 	
 	
@@ -54,8 +55,8 @@ public class Articulo {
 
 	@Override
 	public String toString() {
-		return "\n Descripcion: " + getDescripcion() + "\n PrecioCompra: " + getPrecioCompra() + "\n precioVenta: "
-				+ getPrecioVenta() + "\n Stock=" + getStock() + "\n";
+		return "------------------------------------------\n Codigo: "+ getCodigo() +"\n Descripcion: " + getDescripcion() + "\n PrecioCompra: " + getPrecioCompra() + "\n precioVenta: "
+				+ getPrecioVenta() + "\n Stock=" + getStock() + "\n------------------------------------------\n";
 	}
 	
 	
