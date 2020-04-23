@@ -18,36 +18,36 @@ public class Test  {
 		boolean salir = false;
 		//String nombreArchivo;
 		
-		String[] opciones = {"Añadir Articulo","Eliminar Articulo","Incrementar Articulo","Decrementar Articulo","Mostrar Articulos","Exportar a XML","Salir"};
+		String[] opciones = {"AÃ±adir Articulo","Eliminar Articulo","Incrementar Articulo","Decrementar Articulo","Mostrar Articulos","Exportar a XML","Salir"};
 				
 					do {
 						try {
 							opcion = Menu.crearMenu("GESTISIMAL", opciones);
 							switch(opcion) {
 								case 1:
-									descripcion = Teclado.leerCadena("Introduce descripción :");
+									descripcion = Teclado.leerCadena("Introduce descripciÃ³n :");
 									precioCompra = Teclado.leerDecimal("Introduce el precio de compra :");
 									precioVenta = Teclado.leerDecimal("Introduce el precio de venta :");
 									stock = Teclado.leerEntero("Introduce el stock disponible :");
 									almacen.annadirArticulo(descripcion, precioCompra, precioVenta, stock);
-									almacen.mostrarArticulo(almacen.almacen.size()-1);//muestra el ultimo articulo añadido(longitud almacen-1)
+									almacen.mostrarArticulo(almacen.almacen.size()-1);//muestra el ultimo articulo aÃ±adido(longitud almacen-1)
 									break;
 								case 2:
 									
 									if(almacen.listarArticulos()==0) {
-										opcion = Teclado.leerEntero("Introduce código del articulo a borrar: ");
+										opcion = Teclado.leerEntero("Introduce cÃ³digo del articulo a borrar: ");
 										almacen.borrarArticulo(opcion);
 									}else{
 										System.out.println("No hay articulos en el almacen.");
 									}
 									break;
 								case 3:
-									codigo = Teclado.leerEntero("Introduce código de artículo: ");
+									codigo = Teclado.leerEntero("Introduce cÃ³digo de artÃ­culo: ");
 									int incremento = Teclado.leerEntero("Introduce cantidad a incrementar: ");
 									almacen.incrementarProducto(codigo, incremento);
 									break;
 								case 4:
-									codigo = Teclado.leerEntero("Introduce código de artículo: ");
+									codigo = Teclado.leerEntero("Introduce cÃ³digo de artÃ­culo: ");
 									int decremento = Teclado.leerEntero("Introduce cantidad a decrementar: ");
 									almacen.decrementarProducto(codigo, decremento);
 									break;
@@ -55,12 +55,12 @@ public class Test  {
 									//almacen.listarArticulos();
 									if(almacen.listarArticulos()!=0) {
 										System.out.println("--------------------------------");
-										System.out.println(" No hay productos en el almacén ");
+										System.out.println(" No hay productos en el almacÃ©n ");
 										System.out.println("--------------------------------");
 									}
 									break;
 								case 6:
-									almacen.exportarAXML(Teclado.leerCadena("¿Como llamarás al documento XML?"));
+									almacen.exportarAXML(Teclado.leerCadena("Â¿Como llamarÃ¡s al documento XML?"));
 									
 									break;
 								case 7:
