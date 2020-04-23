@@ -16,8 +16,9 @@ public class Test  {
 		int stock = 0;
 		int codigo;
 		boolean salir = false;
+		//String nombreArchivo;
 		
-		String[] opciones = {"Añadir Articulo","Eliminar Articulo","Incrementar Articulo","Decrementar Articulo","Mostrar Articulos","Salir"};
+		String[] opciones = {"Añadir Articulo","Eliminar Articulo","Incrementar Articulo","Decrementar Articulo","Mostrar Articulos","Exportar a XML","Salir"};
 				
 					do {
 						try {
@@ -54,11 +55,15 @@ public class Test  {
 									//almacen.listarArticulos();
 									if(almacen.listarArticulos()!=0) {
 										System.out.println("--------------------------------");
-										System.out.println(" No hay productos en el almacen ");
+										System.out.println(" No hay productos en el almacén ");
 										System.out.println("--------------------------------");
 									}
 									break;
 								case 6:
+									almacen.exportarAXML(Teclado.leerCadena("¿Como llamarás al documento XML?"));
+									
+									break;
+								case 7:
 									salir = true;
 									break;
 								
