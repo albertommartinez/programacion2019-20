@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane hgap="10.0" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FraccionJFXControlador">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label text="Fraccion 1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="Fraccion 2" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <TextField fx:id="numerador1" prefHeight="31.0" prefWidth="101.0" promptText="Numerador1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField fx:id="denominador1" promptText="Denominador1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Line endX="100.0" startX="-100.0" strokeWidth="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Line endX="100.0" startX="-100.0" strokeWidth="5.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <TextField fx:id="numerador2" promptText="Numerador2" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <TextField fx:id="denominador2" promptText="Denominador2" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <RadioButton fx:id="opcionSuma" mnemonicParsing="false" text="Suma" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <toggleGroup>
+            <ToggleGroup fx:id="grupo1" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="opcionResta" mnemonicParsing="false" text="Resta" toggleGroup="$grupo1" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <RadioButton fx:id="opcionProducto" mnemonicParsing="false" text="Producto" toggleGroup="$grupo1" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+      <RadioButton fx:id="opcionDivision" mnemonicParsing="false" text="División" toggleGroup="$grupo1" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+      <Button fx:id="Bcalcula" mnemonicParsing="false" onAction="#manejadorBoton" text="Calcula" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+      <Label text="Resultado" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+      <TextField fx:id="numeradorR" promptText="NumeradorR" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+      <TextField fx:id="denominadorR" promptText="DenominadorR" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+      <Line endX="100.0" startX="-100.0" strokeWidth="5.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+   </children>
+</GridPane>
