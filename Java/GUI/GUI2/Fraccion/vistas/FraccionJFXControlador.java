@@ -13,11 +13,7 @@ import javafx.scene.control.TextField;
 
 
 
-/**
- * Implementación de la clase Fracción.
- * 
- * @author Rafael del Castillo
- */
+
 
 public class FraccionJFXControlador implements Initializable{
    
